@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Can We Bus It to the Beach?</title>
+		<link href="css/EricMeyerReset.css" rel="stylesheet"/>
+		<link href="css/graph.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="map/leaflet.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
+		<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="js/Chart.min.js"></script>
+		<script type="text/javascript" src="js/graphsMap.js"></script>
+		<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+		<script src="map/leaflet.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<h1>Can We Bus It to the Beach?</h1>
+			<article>
+				<p>The City of Windsor has made some efforts to ensure the area is navigable by bus and bike. But how user-friendly are these methods of alternative transportation for accessing the many tourist attractions and points of interest throughout Windsor?</p>
+
+				<p>With a rich background encompassing prohibition, auto heritage, the war of 1812, and black history, Windsor is home to a multitude of unique historical sites. The city also boasts a variety of cultural attractions inclusive of galleries, parks, gardens, annual festivals, restaurants, and nightlife. According to the latest figures from Tourism Windsor Essex Pelee Island, the area attracted 4,845,569 visitors in 2012 alone.</p>
+
+				<div id="tourismDiv">
+					<p>2012 Tourism Stats</p>
+					<p>4 845 569 visitors</p>
+					<canvas id="tourismStats" height="200" width="200"></canvas>
+					<p>total spending: &#36;562 301 738</p>
+					<p><a href="http://visitwindsoressex.com/">Tourism Windsor Essex</a></p>
+				</div>
+
+				<p>These destinations appeal to out of town visitors, as well as local residents seeking to form a deeper understanding of their city, and for those without a vehicle, Transit Windsor is a viable option. But how accessible are the various tourist attractions for these individuals relying on the bus?</p>
+
+				<p>Route maps indicate that the city core is well accommodated in terms of coverage. It’s apparent that Transit Windsor has taken tourist destinations and places of interest into account when planning bus routes. SB Contemporary Art, Windsor’s Community Museum, and Ambassador Golf Club are all examples of destinations easily reached by bus, each being within 15 m of a stop.</p>
+
+				<p>Despite these efforts, some places have fallen through the cracks. Sandpoint Beach is one such local attraction which isn’t easily accessed by bus. As the only public beach in Windsor, it is a popular destination during the summer months. However, the nearest stop is a .48 km walk away. Furthermore, this stop is only used by the Lauzon 10, meaning a transfer is needed for passengers travelling from the city core.</p>
+
+				<p>Pathway to Potential’s 2014 Windsor Essex Transportation Report states that 69% of survey respondents feel the community’s needs are not being met by public transit. Among these respondents, common criticisms pertain to hours of operation and frequency of buses, particularly on weekends. When asked &ldquo;what would make you more likely to bus/bike where you need to go?&rdquo; 58&#37; responded with &ldquo;more direct bus routes.&rdquo;</p>
+
+				<p>Biking is another option for those exploring the area’s attractions without a vehicle. Bicycles are available to rent for out of town visitors at several locations throughout the city, including Courtesy Bicycles and The City Cyclery. In 2011, The City of Windsor received an inaugural Bicycle Friendly Communities Bronze Award from the Share the Road Cycling Coalition.</p>
+
+				<p>However, evaluations of Windsor biking in Pathway to Potential’s 2014 Windsor Essex Transportation Report show mean scores below the midpoint of the scale in the categories of bicycle parking, designated bike lanes, driver awareness, and overall safety/comfort while biking.</p>
+
+				<p>Cody Howard, an avid local urban cyclist who has biked through most major Canadian cities, feels that Windsor’s bike paths are short, and sporadically distributed throughout the city, stating &ldquo;A few nature paths provide access to limited tourists destinations. The Greenway path and the riverfront sculpture park, to name two. However, neither of the paths have bike friendly lanes leading to them.&rdquo;</p>
+
+				<p>Most of the city’s most popular tourist destinations are accessible without use of a vehicle, and lie within at least 300 m of a bus stop. Still, it seems there is room for improvement, particularly in the distribution of bike routes and lanes.</p>
+			</article>
+		</div>
+
+		<div id="graphDiv">
+			<h2>Let's go there! How close is it to a bus stop?</h2>
+			<canvas id="barGraph" height="600" width="1000"></canvas>
+		</div>
+
+		<div id="mapContainer">
+			<h2>Where are the places of interest?</h2>
+			<div id="map"></div>
+		</div>
+
+		<footer>
+			<p>February 22, 2015</p>
+			<p>Article by Amanda Sinasac &bull; Infographics by Meghan O'Donnell</p>
+			<p><a href="http://hackf.org/2015/02/18/press-play-hackathon-reveal-on-sunday/">PressPlay: Data-Journalism Hackathon</a></p>
+			<p>Transit data from <a href="http://www.citywindsor.ca/opendata/Pages/Open-Data-Catalogue.aspx">Windsor's Open Data Catalogue</a></p>
+		</footer>
+	</body>
+</html>

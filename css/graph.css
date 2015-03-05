@@ -1,0 +1,57 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+h1 {
+	margin: 4% 0;
+	font-size: 3.2em;
+	color: #303030;
+}
+h2 {
+	color: #303030;
+	margin: 3% 0;
+	font-size: 1.7em;
+}
+p {
+	margin: 2.2% 0;
+	color: #454545;
+	line-height: 1.2em;
+}
+footer {
+	margin: 2.2% auto;
+	color: #454545;
+	line-height: 1.2em;
+	width: 1000px;
+	padding-top: 3%;
+}
+footer p {
+	margin: 0.5%;
+}
+#main {
+	width: 1000px;
+	margin: auto;
+}
+#graphDiv {
+	width: 1000px;
+	margin: auto;
+}
+
+#tourismDiv {
+	float: left;
+	margin-right: 2%;
+}
+
+#tourismDiv p:first-of-type {
+	margin-top: 0;
+}
+#tourismDiv p:not(:first-of-type) {
+	font-size: 0.8em;
+}
+
+#mapContainer, #map {
+	height: 600px;
+	width: 1000px;
+	margin: auto;
+}
+#mapContainer {
+	margin-top: -1%;
+}

@@ -21,7 +21,7 @@ $(document).ready(function() {
     maxZoom: 18
 	}).addTo(map);
 
-	var prevRouteData = 0;
+	var prevRouteData = [];
 	// load json for bar graph and map
 	$.getJSON("stopPOI.json", function(data2) {
 		$.each(data2, function(key, value) {
@@ -30,27 +30,31 @@ $(document).ready(function() {
 			var dist = Math.floor(value[0]);
 			data.labels.push(tLabel);
 			data.datasets[0].data.push(dist);
-			
+
 			// add markers to map
 			L.marker([value[3], value[2]])
 			.addTo(map)
 			.bindPopup(key + ": " + dist +" metres from " + value[1])
 			.on("click", function() {
-				if (prevRouteData != 0) {
-					console.log(prevRouteData);
-					// trying unsuccessfully to remove previously drawn polylines
-					map.removeLayer(prevRouteData);
+				if (prevRouteData.length > 0) {
+					prevRouteData.forEach(function(busRouteLine, index) {
+						map.removeLayer(busRouteLine);
+					});
 				}
 				// load the route data that corresponds to the marker
 				$.getJSON("routes_ll84.geojson", function(rData) {
 					$.each(rData.features, function(dx, routeData) {
 						if (routeData.properties.NAME == value[1]) {
-							prevRouteData = L.geoJson(routeData).addTo(map);
+							var busRouteLine = L.geoJson(routeData);
+							busRouteLine.addTo(map);
+							prevRouteData.push(busRouteLine)
 						}
 					});
 				});
 			});
 		});
+
+
 		var ctx = $("#barGraph").get(0).getContext("2d");
 		var options = {tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>m"};
 		var myBarChart = new Chart(ctx).Bar(data, options);
